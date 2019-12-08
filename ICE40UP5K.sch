@@ -1,0 +1,173 @@
+EESchema Schematic File Version 4
+LIBS:ICE40UP5K-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 4200 2320 610  1780
+U 5DD63958
+F0 "USB" 50
+F1 "USB.sch" 50
+F2 "12MHz" O R 4810 3500 50 
+F3 "FT_SCK" O R 4810 3000 50 
+F4 "FT_MOSI" O R 4810 2800 50 
+F5 "FT_MISO" I R 4810 2900 50 
+F6 "FT_SS" O R 4810 3100 50 
+F7 "FT_CDONE" O R 4810 2600 50 
+F8 "FT_RESET" O R 4810 2500 50 
+$EndSheet
+$Sheet
+S 4890 5045 520  155 
+U 5DE3D3D7
+F0 "POWER" 50
+F1 "POWER.sch" 50
+$EndSheet
+$Sheet
+S 5605 2320 1235 1340
+U 5DD66733
+F0 "ICE" 50
+F1 "ICE.sch" 50
+F2 "CDONE" I L 5605 2600 50 
+F3 "CRESET" I L 5605 2500 50 
+F4 "RGB_0" O R 6840 3500 50 
+F5 "RGB_1" O R 6840 3400 50 
+F6 "RGB_2" O R 6840 3300 50 
+F7 "ICE_SPI_MISO" O L 5605 2900 50 
+F8 "ICE_SPI_MOSI" I L 5605 2800 50 
+F9 "ICE_SPI_SCK" I L 5605 3000 50 
+F10 "ICE_SPI_SS" I L 5605 3100 50 
+F11 "ICE_CLK" I L 5605 3500 50 
+$EndSheet
+Wire Wire Line
+	4810 3500 5605 3500
+Wire Wire Line
+	4810 2600 5605 2600
+Wire Wire Line
+	5605 2500 4810 2500
+$Sheet
+S 5610 4100 1200 450 
+U 5DFF45B4
+F0 "SPI" 50
+F1 "SPI.sch" 50
+F2 "FLASH_CS" I L 5610 4200 50 
+F3 "FLASH_CLK" I L 5610 4300 50 
+F4 "FLASH_MOSI" I L 5610 4500 50 
+F5 "FLASH_MISO" O L 5610 4400 50 
+$EndSheet
+$Comp
+L Device:Jumper_NO_Small JP101
+U 1 1 5DFF66E3
+P 5180 1850
+F 0 "JP101" H 5080 1900 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 5180 1944 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5180 1850 50  0001 C CNN
+F 3 "~" H 5180 1850 50  0001 C CNN
+	1    5180 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper_NO_Small JP102
+U 1 1 5DFF6BFB
+P 5180 1950
+F 0 "JP102" H 5080 2000 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 5180 2044 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 5180 1950 50  0001 C CNN
+F 3 "~" H 5180 1950 50  0001 C CNN
+	1    5180 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4960 2800 4960 1850
+Wire Wire Line
+	4960 1850 5080 1850
+Wire Wire Line
+	4810 2800 4860 2800
+Wire Wire Line
+	5605 2800 5010 2800
+Wire Wire Line
+	5010 2800 5010 1950
+Wire Wire Line
+	5010 1950 5080 1950
+Wire Wire Line
+	5605 2900 5415 2900
+Wire Wire Line
+	5415 2900 5415 1850
+Wire Wire Line
+	5415 1850 5280 1850
+Wire Wire Line
+	5340 2900 5340 1950
+Wire Wire Line
+	5340 1950 5280 1950
+Wire Notes Line width 20 style solid
+	4660 1500 4760 1500
+Wire Notes Line width 20 style solid
+	4660 1550 4760 1550
+Wire Notes Line width 20 style solid
+	4710 1750 4710 1650
+Wire Notes Line width 20 style solid
+	4760 1750 4760 1650
+Text Notes 4860 1550 0    50   ~ 0
+For programming FLASH
+Text Notes 4860 1700 0    50   ~ 0
+For programming ICE
+Wire Wire Line
+	5605 3000 5060 3000
+Wire Wire Line
+	4810 3100 5160 3100
+Wire Wire Line
+	4810 2900 4960 2900
+Wire Wire Line
+	4860 4500 4860 2800
+Wire Wire Line
+	4860 4500 5610 4500
+Connection ~ 4860 2800
+Wire Wire Line
+	4860 2800 4960 2800
+Wire Wire Line
+	4960 2900 4960 4400
+Wire Wire Line
+	4960 4400 5610 4400
+Connection ~ 4960 2900
+Wire Wire Line
+	4960 2900 5340 2900
+Wire Wire Line
+	5060 4300 5060 3000
+Wire Wire Line
+	5060 4300 5610 4300
+Connection ~ 5060 3000
+Wire Wire Line
+	5060 3000 4810 3000
+Wire Wire Line
+	5160 3100 5160 4200
+Wire Wire Line
+	5160 4200 5610 4200
+Connection ~ 5160 3100
+Wire Wire Line
+	5160 3100 5605 3100
+$Sheet
+S 7060 3150 700  550 
+U 5E00B993
+F0 "RGB_LED" 50
+F1 "RGB_LED.sch" 50
+F2 "LED_R" I L 7060 3300 50 
+F3 "LED_G" I L 7060 3400 50 
+F4 "LED_B" I L 7060 3500 50 
+$EndSheet
+Wire Wire Line
+	7060 3500 6840 3500
+Wire Wire Line
+	7060 3400 6840 3400
+Wire Wire Line
+	6840 3300 7060 3300
+$EndSCHEMATC
